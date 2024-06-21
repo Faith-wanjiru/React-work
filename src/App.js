@@ -26,33 +26,44 @@
 
 
 
-
-
-
-
-
-
-
-// import About from "./About"
-import React from 'react';
-import Login from "./Login";
-import Users from "./Users";
-
-
 // export function Introduction  (){
 //      return(
 //       <h1>We are Adalab</h1>
 //      )
 // }
+// import About from "./About"
 
+
+
+
+
+
+
+import { Routes, Route, Link } from "react-router-dom";
+import Login from "./Login";
+import Users from "./Users";
+import LoginLink from "./Login/LoginLink";
 
 
 const App = () =>{
 return(
     <div>
-      {<Login/>}
-      <Users/>
-    </div>
-  )
+      <LoginLink/>
+
+<Routes>
+
+  <Route path='/login' element={<Login/>}/>
+  {/* <Login/> */}
+  {/* <Route> */}
+  <Route path='/users' element={<Users/>}/>
+  {/* <users/> */}
+  {/* <Route/> */}
+</Routes>
+
+{/* {<Login/>}
+      <Users/> */}
+</div>
+)
 }
+
 export default App;

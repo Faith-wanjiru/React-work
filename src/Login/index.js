@@ -1,7 +1,10 @@
 import "./index.css";
 import { useState } from "react";
 import { login } from "./utils";
+import{Link, useNavigate} from 'react-router-dom';
 const Login = () => {
+  
+  const navigate = useNavigate();
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   console.log({ username });
@@ -9,12 +12,14 @@ const Login = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     const result = await login({ username, password });
+    navigate('./users')
     console.log({ result });
   };
   return (
     <div>
       <form onSubmit={handleLogin}>
-      <button type="submit">Login</button>
+      {/* <button type="submit">Login</button> */}
+      
         <h2>Login</h2>
         <input
           placeholder="Enter Username"
@@ -29,7 +34,8 @@ const Login = () => {
         />
         <br />
         {/* <button type="submit">Login</button> */}
-      </form>{" "}
+        <Link to="/users"><button type='submit'>Login</button></Link>
+      </form>
       
     </div>
   );

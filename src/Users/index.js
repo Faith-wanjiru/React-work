@@ -1,5 +1,5 @@
 import "./index.css";
-import React from 'react'
+// import React from 'react'
 import { useGetUsers } from "./hooks/useGetUsers";
 import UserCard from "../Atoms/UserCards"; 
 const Users= () =>{
@@ -13,7 +13,10 @@ const Users= () =>{
             <UserCard
             key={user.id}
             image={user.image}
-            fullName={`${user.firstName} ${user.lastName} ${user.age} ${user.gender} `}
+            fullName={`${user.firstName} ${user.lastName} 
+            ${user.age} 
+            ${user.gender} 
+            ${user.email} `}
            />
         )): !loading&& <h2>No users found</h2>
              
